@@ -4,3 +4,6 @@
 #.NET cache files
 bin/
 obj/
+
+#Node.js cache
+node_modules/

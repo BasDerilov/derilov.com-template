@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace fictionsplash
 {
@@ -24,6 +25,12 @@ namespace fictionsplash
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            #if DEBUG
+            services.AddHostedService(sp => new NpmWatchHostedService(
+                enabled: sp.GetRequiredService<IWebHostEnvironment>().IsDevelopment(),
+                logger: sp.GetRequiredService<ILogger<NpmWatchHostedService>>()));
+            #endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,5 +59,6 @@ namespace fictionsplash
                 endpoints.MapRazorPages();
             });
         }
+        
     }
 }
