@@ -1,4 +1,6 @@
-.git/
+#vscode
 .vscode/
+
+#.NET cache files
 bin/
 obj/
