@@ -11,10 +11,13 @@ namespace fictionsplash.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        
+        public string color { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, string color = "#fce043")
         {
             _logger = logger;
+            this.color = color;
         }
 
         public void OnGet()

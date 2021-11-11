@@ -1,14 +1,24 @@
 @import 'variables';
-@import 'buttons';
-
-body {
-    background-color: $background-color;
-}
+@import 'hfstyling';
 
 html, body {
     height: 100%;
 }
 
-*, *:focus, *:hover {
-    outline: none;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+.background {
+    background-color: $main-color;
+}
+
+.animatedStroke {
+    color: $secondary-color;
 }
