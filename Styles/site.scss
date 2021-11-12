@@ -1,24 +1,59 @@
 @import 'variables';
 @import 'hfstyling';
 
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.content {
-    flex: 1;
-}
-
-.background {
+@mixin background-theme() {
     background-color: $main-color;
 }
 
-.animatedStroke {
+.container{
+    text-align: -webkit-match-parent;
+}
+
+.nav-link{
+    color: #7f5a83 !important;
+}
+
+a:hover {
+    color: #7c777c;
+}
+
+a {
+    color: #7f5a83;
+}
+
+.page-title{
     color: $secondary-color;
+    text-align: right;
+}
+
+.background-solid {
+    @include background-theme;
+}
+
+.info-board{
+    box-sizing: content-box;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    background-color: $main-color-dark, 50%;
+    box-shadow: 5px;
+}
+
+.animated-gradient {
+	background: linear-gradient(45deg, #0d324d, #7f5a83);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+    50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
