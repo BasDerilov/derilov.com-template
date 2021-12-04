@@ -11,7 +11,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">fictionsplash</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index" style="color: #f6f2f2;">fictionsplash</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,25 +22,28 @@
                             <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-page="/Games">Games</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Gosho">Gosho</a>
+                            <a class="nav-link" asp-area="" asp-page="/Blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container to-bottom">
-        <main role="main" class="pb-3 info-board to-bottom">
-            @RenderBody()
-        </main>
-    </div>
+    
+    <main role="main">
+        @RenderBody()
+    </main>
+    
 
     <footer class="footer text-muted box-shadow">
         <div class="container" style="padding: 1rem;">
-            &copy; 2021 - fictionsplash - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <span class="copy-left">&copy;</span> 2021 - fictionsplash - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
