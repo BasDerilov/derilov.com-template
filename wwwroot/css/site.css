@@ -18,29 +18,27 @@
   text-align: left;
 }
 
+.nav-link {
+  font-size: larger;
+}
+
+.navbar-brand {
+  font-size: larger;
+  font-weight: bold;
+}
+
+h1 {
+  padding-top: 5vh;
+}
+
+.copy-left {
+  transform: rotate(180deg);
+  font: 18px sans-serif;
+  display: inline-block;
+}
+
 .container {
   text-align: -webkit-match-parent;
-}
-
-.nav-link {
-  color: #7f5a83 !important;
-}
-
-a:hover {
-  color: #7c777c;
-}
-
-a {
-  color: #7f5a83;
-}
-
-.page-title {
-  color: #ffef00;
-  text-align: right;
-}
-
-.background-solid {
-  background-color: #2a52be;
 }
 
 .info-board {
@@ -48,17 +46,17 @@ a {
   height: 100%;
   width: 100%;
   align-self: center;
-  background-color: #2548a7, 50%;
   box-shadow: 5px;
 }
 
-.animated-gradient {
+.home-background {
+  background-color: #0d324d;
   background: linear-gradient(45deg, #0d324d, #7f5a83);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
+  color: white;
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -69,6 +67,236 @@ a {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.games-background {
+  background-color: #b621fe;
+  background: linear-gradient(45deg, #b621fe, #1fd1f9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.blog-background {
+  background-color: #fbd72b;
+  background: linear-gradient(45deg, #fbd72b, #f9484a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.contact-background {
+  background-color: #f6ebe6;
+  background: linear-gradient(45deg, #f6ebe6, #aee1f9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  color: black;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home-holo {
+  background-color: black;
+  opacity: 0.2;
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  width: fit-content;
+}
+
+.welcome-message {
+  text-shadow: 50px;
+}
+
+p, h1, h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-attachment: fixed;
+  text-align: center;
+  margin: auto;
+}
+
+.frosted {
+  background-color: #00000030;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  margin: auto;
+}
+
+.banner {
+  margin-bottom: -2px;
+}
+
+.page-main-board {
+  margin: auto;
+  padding: 21px;
+  clear: both;
+}
+
+#outline-card-title-1 {
+  padding: 8px;
+  background-color: #28313b;
+  margin-left: auto;
+  margin-bottom: 0;
+  width: 300px;
+  font-size: large;
+  float: right;
+}
+
+#outline-card-1 {
+  margin-left: auto;
+  border: 2px solid #28313b;
+  width: 300px;
+  border-radius: 0px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #343f4c;
+  height: 221px;
+  float: right;
+}
+
+.menu-link {
+  font-size: medium;
+  margin: auto;
+}
+
+.styled-p {
+  padding: 10px;
+  margin: auto;
+  text-align: left;
+}
+
+.inline {
+  clear: both;
+}
+
+#blog-notice {
+  background-color: #28313b;
+}
+
+#outline-card-title-2 {
+  padding: 8px;
+  background-color: #28313b;
+  margin-right: auto;
+  margin-bottom: 0;
+  width: 300px;
+  font-size: large;
+  float: left;
+}
+
+#outline-card-2 {
+  margin-left: auto;
+  border: 2px solid #28313b;
+  width: 300px;
+  border-radius: 0px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #343f4c;
+  height: 221px;
+  float: left;
+}
+
+.solid-background {
+  background-color: #28313b;
+}
+
+.contact-board {
+  background-color: #28313b;
+  border-radius: 5px;
+  height: 688px;
+  padding: 62px;
+  max-width: 750px;
+}
+
+.badge-base {
+  margin-left: auto;
+  float: right;
+}
+
+#contact-info {
+  text-align: left;
+  float: left;
+  color: white;
+  font-weight: 400;
+}
+
+#pm1 {
+  padding: 6px;
+  margin-right: 300px;
+}
+
+#pm2 {
+  padding: 6px;
+  margin-left: 300px;
+}
+
+.games-board {
+  clear: both;
+  background-color: #28313b;
+  height: 132px;
+  width: 49vw;
+  margin: auto;
+  color: white;
+  padding: 10px;
+  border: solid greenyellow;
+  margin-bottom: 5px;
+}
+
+.game-description {
+  padding: 3px;
+  text-align: left;
+}
+
+.game-image {
+  max-width: 100%;
+  max-height: 100%;
+  float: left;
+  padding: 5px;
+}
+
+.id-style {
+  width: 300px;
+  float: right;
+  padding: 3px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#id-image {
+  width: 100%;
 }
 
 /*# sourceMappingURL=site.css.map */
