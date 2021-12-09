@@ -237,21 +237,22 @@ body {
 .contact-board {
   background-color: #28313b;
   border-radius: 5px;
-  height: 688px;
+  min-height: 688px;
   padding: 62px;
   max-width: 750px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .badge-base {
-  margin-left: auto;
   float: right;
 }
 
 #contact-info {
   text-align: left;
-  float: left;
   color: white;
   font-weight: 400;
+  margin: auto;
 }
 
 #pm1 {
@@ -290,9 +291,9 @@ body {
 
 .id-style {
   width: 300px;
-  float: right;
   padding: 3px;
   font-family: "Times New Roman", Times, serif;
+  margin: auto;
 }
 
 #id-image {

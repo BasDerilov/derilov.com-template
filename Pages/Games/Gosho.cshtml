@@ -74,7 +74,16 @@
 <script>	
 	var canvas = document.getElementById("snakeBoard");
     var context = canvas.getContext("2d");
-    document.addEventListener("keydown", ChangeDirection);
+
+    let keydownEvents = [];
+    const SPACE_KEY = 32;
+    document.addEventListener("keydown", event => {
+        if (event.keyCode == SPACE_KEY) {
+            RestartGame()
+        } else {
+            keydownEvents.push(event);
+        }
+    });
 
     goshoColor = "#0b8fe8"
     goshoBoarderColor = "#39db61"
@@ -104,18 +113,31 @@
     }
     
     Main()
-
+    
     function Main() {
-        setTimeout(function onTick()
+        let lastTime = Date.now()
+        const interval = setInterval(function onTick()
         {
             ClearCanvas();
-            MoveSnake();
-            DrawSnake();
-            if(HasDied())
+            if (Date.now() - lastTime > speed) {
+                if (keydownEvents.length) {
+                    //const len = keydownEvents.length;
+                    const len = 1;
+                    for (let i = 0; i < len; i++)
+                        ChangeDirection(keydownEvents[i]);
+                    for (let i = 0; i < len; i++)
+                        keydownEvents.shift()
+
+                }
+                MoveSnake();
+                lastTime = Date.now();
+            }
+            DrawSnake()
+            if(HasDied()) {
+                clearInterval(interval)
                 DeathMessage()
-            else
-                Main();
-        }, speed)    
+            }
+        }, 0)    
     }
 
     function DrawSnakePart(snakePart)
@@ -209,11 +231,6 @@
         {    
             dx = 0;
             dy = 10;
-        }
-
-        if (keyPressed === SPACE_KEY && HasDied())
-        {
-            RestartGame();
         }
     }
 

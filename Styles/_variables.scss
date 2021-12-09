@@ -1,9 +1,31 @@
-//colors
-$main-color: #2a52be;
-$secondary-color: #ffef00;
+@use "sass:map";
 
-//shades
-$main-color-dark: #2548a7;
-$secondary-color-darker: #e6d600;
-$main-color-lighter: #2e59d1;
-$secondary-color-lighter: #fff01a;
+//colors
+$main-color: #0d324d;
+$secondary-color: #7f5a83;
+
+//gradients
+$g-fake-news: (
+    "color1":#b0f3f1,
+    "color2":#ffcfdf
+);
+
+$g-furry-of-tayyip: (
+    "color1": #5f72be,
+    "color2": #9921e8
+);
+
+$g-rush-job: (
+    "color1": #fbd72b,
+    "color2": #f9484a
+);
+
+$g-lion-milk: (
+    "color1": #f6ebe6,
+    "color2": #aee1f9
+);
+
+$g-instagram-story: (
+    "color1": #b621fe,
+    "color2": #1fd1f9,
+)
