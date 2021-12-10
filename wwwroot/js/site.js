@@ -4,7 +4,7 @@
 const regexp = /(rgb\(\d+, ?\d+, ?\d+\)), (rgb\(\d+, ?\d+, ?\d+\))/g;
 
 const body = document.querySelector("body");
-const bodyBgData = getComputedStyle(body).getPropertyValue("background");
+const bodyBgData = getComputedStyle(body).getPropertyValue("background-image");
 const colors = [...bodyBgData.matchAll(regexp), 'red', 'green'];
 
 const firstColor = colors[0][1];
