@@ -1,0 +1,293 @@
+@use "sass:map";
+@import 'variables';
+@import 'hfstyling';
+
+@mixin hologram($color: black, $opacity: 0.2) {
+    background-color: $color;
+    opacity: $opacity;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+}
+
+@mixin gradient-background($color1: $main-color, $color2: $secondary-color, $angle: 45deg) {
+ 
+    background-color: $color1;
+    background: linear-gradient($angle, $color1, $color2);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;   
+
+    @keyframes gradient{
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+h1{
+    padding-top: 5vh;
+}
+
+.copy-left{
+    transform: rotate(180deg);
+    font: 18px sans-serif;
+    display: inline-block;
+}
+
+.container{
+    text-align: -webkit-match-parent;
+}
+
+.info-board{
+    box-sizing: content-box;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    box-shadow: 5px;
+}
+
+.home-background{
+	@include gradient-background();
+    color: white;
+}
+
+.games-background{
+    @include gradient-background(map.get($g-old-friend, 2), map.get($g-old-friend, 1))
+}
+
+.blog-background{
+    @include gradient-background(map.get($g-rush-job,1), map.get($g-rush-job,2))
+}
+
+.contact-background{
+    @include gradient-background(map.get($g-spotyfy-free,2), map.get($g-spotyfy-free,1));
+    color: black;
+}
+
+.home-holo{
+    @include hologram();
+    width: fit-content;
+}
+
+.welcome-message{
+    text-shadow: 50px;
+}
+
+p, h1, h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-attachment: fixed;
+    text-align: center;
+    margin: auto;
+}
+
+.frosted{
+    background-color: #00000030;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    margin: auto;
+}
+
+.banner{
+    margin-bottom: -2px;
+}
+
+.page-main-board{
+    margin: auto;
+    padding: 21px; 
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#outline-card-title-1{
+    padding: 8px;
+    background-color: #28313b;
+    margin-left: auto;
+    margin-bottom: 0;
+    width: 300px;
+    font-size: large;
+    float: right;
+}
+
+#outline-card-1{
+    margin-left: auto;
+    border: 2px solid #28313b;
+    max-width: 300px;
+    border-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #343f4c;
+    max-height: 221px;
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-link{
+    font-size: medium;
+    margin: auto;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.styled-p{
+    padding: 10px;
+    margin: auto;
+    text-align: left;
+}
+
+.inline{
+    clear: both;
+}
+
+#blog-notice{
+    background-color: #28313b;
+}
+
+#outline-card-title-2{
+    padding: 8px;
+    background-color: #28313b;
+    margin-right: auto;
+    margin-bottom: 0;
+    width: 300px;
+    font-size: large;
+    float: left;
+}
+
+#outline-card-2{
+    margin-left: auto;
+    border: 2px solid #28313b;
+    max-width: 300px;
+    border-radius: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #343f4c;
+    max-height: 221px;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.solid-background{
+    background-color: #28313b;
+}
+
+.contact-board{
+    background-color: #28313b;
+    border-radius: 5px;
+    min-height: 688px;
+    padding: 20px;
+    max-width: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 9vh;
+}
+
+#contact-h1 {
+    padding-top: 1vh;
+}
+
+.badge-base{
+    float: right;
+}
+
+#contact-info{
+    text-align: left;
+    color: white;
+    font-weight: 400;
+    margin: auto;
+}
+
+.protected-heading{
+    overflow-block: auto;
+}
+
+#pm1{
+    padding: 6px;
+    text-align: left;
+}
+
+#pm2{
+    padding: 6px;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+#last-div{
+    margin-bottom: 50px;
+}
+
+.games-board {
+    background-color: #28313b;
+    min-height: 132px;
+    max-width: 600px;
+    margin: auto;
+    color: white;
+    padding: 10px;
+    border: solid greenyellow;
+    margin-bottom: 5px;
+    display: flex;
+    max-height: fit-content;
+    min-width: min-content;
+    display: flow-root;
+
+}
+
+.game-description{
+    padding: 3px;
+    text-align: left;
+}
+
+.game-image{
+    max-width:120px;
+    max-height:120px;
+    float: left;
+    padding: 5px;
+}
+
+.id-style{
+    width: 300px;
+    padding: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+}
+
+#id-image{
+    width: 100%;
+}
+
+.play-game-btn{
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  max-height: 40px;
+  background-color: #343f4c;
+}
+
+#games-content{
+    display: flex;
+    flex-wrap: wrap;
+}
