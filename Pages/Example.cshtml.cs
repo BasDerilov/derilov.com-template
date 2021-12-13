@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace fictionsplash.Pages
 {
-    public class GamesModel : PageModel
+    public class ExampleModel : PageModel
     {
         public void OnGet()
         {

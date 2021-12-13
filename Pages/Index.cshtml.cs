@@ -14,7 +14,7 @@ namespace fictionsplash.Pages
         
         public string color { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, string color = "#fce043")
+        public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
             this.color = color;

@@ -5,6 +5,13 @@ $main-color: #0d324d;
 $secondary-color: #7f5a83;
 
 //gradients
+/*
+    Gradients are saved in this file in the map format and imported in site.scss where
+    the values are extracted for whatever kind of use you need them. I use them to keep consistent theme
+    on each page.
+
+    **I choose my colors from https://www.eggradients.com/**
+*/
 $g-fake-news: (
     1:#b0f3f1,
     2:#ffcfdf
