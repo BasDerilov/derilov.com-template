@@ -7,14 +7,15 @@
 <html>
     <head>
         <title>Гошо the snake</title>
+        <h3 id="point-board">0</h3>
     </head>
 <body style="background-color: rgb(68, 68, 68);">
-<div class="content">
+<div class="content" id="main-div">
 <h1 class="center" style="color: cornsilk;">
 	Гошо змията алкохолик
 </h1>
 
-<canvas style="display: block;" class="center" tabindex="-1" id="snakeBoard" width=1000 height=600></canvas><br>
+<canvas class="center" tabindex="-1" id="snakeBoard"></canvas><br>
 <span id="vodkaSquare" class="vodka"></span>
 <span id="vodkaTip">Водка (+1 скорост)</span> 
 <span id="meatSquare" class="meat"></span>
@@ -27,15 +28,15 @@
         margin-top: 1000px;
     }
     #snakeBoard {
-        border:10px solid rgb(111, 212, 9);
         background-color: "gray";
+        display: block;
     }
     #vodkaSquare {
-        margin-left:430px; 
+        margin: auto;
         margin-top:20px
     }
     #vodkaTip {
-        margin-left:5px;
+        margin-left: auto;
         color: cornsilk;
     }
     #meatSquare {
@@ -72,13 +73,26 @@
 </style>
 
 <script>	
-	var canvas = document.getElementById("snakeBoard");
-    var context = canvas.getContext("2d");
+	const canvas = document.getElementById("snakeBoard");
+    const context = canvas.getContext("2d");
+    const divForReferance = document.getElementById("main-div")
+
+    let divWidth = divForReferance.clientWidth
+    var scoreBoard = document.getElementById("point-boards")
+    
+    if (divWidth > 1000) {
+        canvas.width = 1000
+    }
+    else {
+        canvas.width = divWidth
+    }
+
+    canvas.height = 500
 
     let keydownEvents = [];
     const SPACE_KEY = 32;
     document.addEventListener("keydown", event => {
-        if (event.keyCode == SPACE_KEY) {
+        if (event.keyCode == SPACE_KEY && HasDied()) {
             RestartGame()
         } else {
             keydownEvents.push(event);
@@ -97,7 +111,7 @@
     ]
     let dx = 10;
     let dy = 0;
-
+    
     let meats = []
 
     let vodkaBottles = []
@@ -105,6 +119,8 @@
     let vodkaCount = 0;
     
     var speed = 100;
+
+    var points = gosho.length * vodkaCount
 
     for(let i = 0;i < 3; i++)
     {
@@ -125,9 +141,10 @@
                     const len = 1;
                     for (let i = 0; i < len; i++)
                         ChangeDirection(keydownEvents[i]);
+                        UpdateScore()
                     for (let i = 0; i < len; i++)
                         keydownEvents.shift()
-
+                        UpdateScore()
                 }
                 MoveSnake();
                 lastTime = Date.now();
@@ -135,6 +152,7 @@
             DrawSnake()
             if(HasDied()) {
                 clearInterval(interval)
+                points = 0
                 DeathMessage()
             }
         }, 0)    
@@ -234,6 +252,10 @@
         }
     }
 
+    function UpdateScore(
+        points = gosho.length * vodkaCount
+    )
+
     function HasDied()
     {
         head = gosho[0];
@@ -260,9 +282,7 @@
     }
 
     function DeathMessage()
-    {
-        let score = gosho.length * vodkaCount;
-        
+    {   
         context.font = "30px Arial"
         context.fillStyle = "red"
         context.fillText("Гошо умря от цироза", 350, 200);
@@ -271,7 +291,7 @@
         context.fillText("Натисни \"space\"", 380, 300)
 
         context.fillStyle = "white"
-        context.fillText("Резултат: "+ score, 350, 400)
+        context.fillText("Резултат: "+ points, 350, 400)
         
     }
     
@@ -299,8 +319,8 @@
 
     function GenerateNewMeat()
     {
-        var randomX = Math.floor(Math.random() * 971)
-        var randomY = Math.floor(Math.random() * 571)
+        var randomX = Math.floor(Math.random() * canvas.width)
+        var randomY = Math.floor(Math.random() * canvas.height)
 
         var meat = {x: randomX, y: randomY}
 
@@ -328,8 +348,8 @@
 
     function GenerateNewVodka()
     {
-        var randomX = Math.floor(Math.random() * 971)
-        var randomY = Math.floor(Math.random() * 571)
+        var randomX = Math.floor(Math.random() * canvas.width)
+        var randomY = Math.floor(Math.random() * canvas.height)
 
         var vodka = {x: randomX, y: randomY}
 
